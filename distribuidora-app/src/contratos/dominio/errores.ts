@@ -1,0 +1,64 @@
+export class ProductoNoEncontradoError extends Error {
+  constructor(productoId: number) {
+    super(`No existe el producto ${productoId}`);
+  }
+}
+
+export class ClienteNoEncontradoError extends Error {
+  constructor(clienteId: number) {
+    super(`No existe el cliente ${clienteId}`);
+  }
+}
+
+export class PedidoNoEncontradoError extends Error {
+  constructor(pedidoId: number) {
+    super(`No existe el pedido ${pedidoId}`);
+  }
+}
+
+export class LoteNoEncontradoError extends Error {
+  constructor(loteId: number) {
+    super(`No existe el lote ${loteId}`);
+  }
+}
+
+export class InventarioInsuficienteError extends Error {
+  constructor(
+    productoId: number,
+    solicitado: number,
+    disponible: number,
+  ) {
+    super(
+      `Producto ${productoId}: solicitado ${solicitado}, disponible ${disponible}`,
+    );
+  }
+}
+
+export class ProductoCaducadoError extends Error {
+  constructor(
+    productoId: number,
+    loteId: number,
+  ) {
+    super(
+      `El lote ${loteId} del producto ${productoId} ya esta caducado`,
+    );
+  }
+}
+
+export class PedidoYaSurtidoError extends Error {
+  constructor(pedidoId: number) {
+    super(`El pedido ${pedidoId} ya fue surtido`);
+  }
+}
+
+export class ClienteInactivoError extends Error {
+  constructor(clienteId: number) {
+    super(`El cliente ${clienteId} esta inactivo`);
+  }
+}
+
+export class CantidadInvalidaError extends Error {
+  constructor(cantidad: number) {
+    super(`La cantidad ${cantidad} debe ser mayor que cero`);
+  }
+}
