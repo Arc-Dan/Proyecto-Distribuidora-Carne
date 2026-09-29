@@ -4,12 +4,6 @@ export class ProductoNoEncontradoError extends Error {
   }
 }
 
-export class ClienteNoEncontradoError extends Error {
-  constructor(clienteId: number) {
-    super(`No existe el cliente ${clienteId}`);
-  }
-}
-
 export class PedidoNoEncontradoError extends Error {
   constructor(pedidoId: number) {
     super(`No existe el pedido ${pedidoId}`);
@@ -48,12 +42,6 @@ export class ProductoCaducadoError extends Error {
 export class PedidoYaSurtidoError extends Error {
   constructor(pedidoId: number) {
     super(`El pedido ${pedidoId} ya fue surtido`);
-  }
-}
-
-export class ClienteInactivoError extends Error {
-  constructor(clienteId: number) {
-    super(`El cliente ${clienteId} esta inactivo`);
   }
 }
 
